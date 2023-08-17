@@ -21,11 +21,11 @@ class NoteItm extends StatelessWidget {
               style: TextStyle(color: Colors.black, fontSize: 26),
             ),
             subtitle: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16),
+              padding: const EdgeInsets.symmetric(vertical: 12),
               child: Text(
                 'Build your career with Mousa',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 18,
                   color: Colors.black.withOpacity(0.4),
                 ),
               ),

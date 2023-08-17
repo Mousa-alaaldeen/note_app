@@ -12,7 +12,7 @@ class NotsListView extends StatelessWidget {
     return ListView.builder(
       physics: const BouncingScrollPhysics(),
       itemBuilder: (BuildContext context, int index) => const Padding(
-        padding: EdgeInsets.symmetric(vertical: 16),
+        padding: EdgeInsets.symmetric(vertical: 4),
         child: NoteItm(),
       ),
     );
