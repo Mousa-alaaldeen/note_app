@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note/cubit/add_note_cubit/add_note_cubit.dart';
 import 'package:note/cubit/add_note_cubit/add_note_state.dart';
-import 'package:note/view/widget/tasks_builder.dart';
 
-class NotsListView extends StatelessWidget {
-  const NotsListView({
+import '../tasks_builder.dart';
+
+class DoneNotsListView extends StatelessWidget {
+  const DoneNotsListView({
     super.key,
   });
 
@@ -14,7 +15,7 @@ class NotsListView extends StatelessWidget {
     return BlocConsumer<AddNoteCubit, AddNoteState>(
       listener: (BuildContext context, state) {},
       builder: (BuildContext context, Object? state) {
-        var tasks = AddNoteCubit.get(context).newTasks;
+        var tasks = AddNoteCubit.get(context).doneTasks;
         return tasksBuilder(tasks: tasks);
       },
     );

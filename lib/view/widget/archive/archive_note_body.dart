@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'custom_app_bar.dart';
-import 'note_list_view_itm.dart';
+import '../custom_app_bar.dart';
+import 'archive_note_list_view_itm.dart';
 
-class NoteViewBody extends StatelessWidget {
-  const NoteViewBody({
+
+class ArchiveNoteViewBody extends StatelessWidget {
+  const ArchiveNoteViewBody({
     super.key,
   });
 
@@ -19,10 +20,10 @@ class NoteViewBody extends StatelessWidget {
           ),
           CustomAppBar(
             icon: Icons.search,
-            title: 'Note Tasks',
+            title: 'Archive Note',
           ),
           Expanded(
-            child: NotsListView(),
+            child: ArchiveNotsListView(),
           ),
         ],
       ),

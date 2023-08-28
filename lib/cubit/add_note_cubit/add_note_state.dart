@@ -1,9 +1,20 @@
-abstract class AddNoteState{}
-class AddNoteInitial extends AddNoteState{}
-class AddNoteLoding extends AddNoteState{}
-class AddNoteSuccses extends AddNoteState{}
-class AddNoteError extends AddNoteState{
-  final String errMessage ;
+abstract class AddNoteState {}
 
-  AddNoteError(this.errMessage);
-}
+class AddNoteInitial extends AddNoteState {}
+
+class ChangeBottomNavState extends AddNoteState {}
+
+class AddNoteCreateDatabaseState extends AddNoteState {}
+
+class AddNoteGetDatabaseState extends AddNoteState {}
+
+class AddNoteUpdateDatabaseState extends AddNoteState {}
+class AddNoteDeleteDatabaseState extends AddNoteState {}
+
+class AddNoteUpdateDatabaseErrorState extends AddNoteState {}
+
+class AddNoteGetDatabaseLodingState extends AddNoteState {}
+
+class AddNoteInsertDatabaseState extends AddNoteState {}
+
+class AddNoteChangeBottomSheetState extends AddNoteState {}
