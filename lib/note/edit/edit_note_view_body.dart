@@ -2,11 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note/cubit/add_note_cubit/add_note_cubit.dart';
-import 'package:note/cubit/add_note_cubit/add_note_state.dart';
-import 'package:note/view/widget/custom_app_bar.dart';
+import 'package:note/resources/cubit/note_cubit.dart';
+import 'package:note/resources/cubit/note_state.dart';
+import 'package:note/resources/widget/custom_app_bar.dart';
 
-import 'custom_text_field.dart';
+import '../../resources/widget/custom_text_field.dart';
 
 class EditNoteViewBody extends StatelessWidget {
   EditNoteViewBody(

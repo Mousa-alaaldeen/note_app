@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 
-import 'add_note_form.dart';
+import 'note_form.dart';
 
 class AddNoteBottmSheet extends StatelessWidget {
   const AddNoteBottmSheet({super.key});

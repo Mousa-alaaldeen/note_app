@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:note/cubit/add_note_cubit/add_note_cubit.dart';
+import 'package:note/resources/cubit/note_cubit.dart';
 
 Widget buildNoteItm(BuildContext context, Map model, index) {
   return Dismissible(

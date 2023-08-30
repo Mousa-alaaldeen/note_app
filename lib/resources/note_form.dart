@@ -1,14 +1,16 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:note/cubit/add_note_cubit/add_note_cubit.dart';
-import 'package:note/cubit/add_note_cubit/add_note_state.dart';
+import 'package:note/resources/cubit/note_cubit.dart';
+import 'package:note/resources/cubit/note_state.dart';
+import 'package:note/resources/widget/button_custom.dart';
 
-import '../../constents.dart';
-import 'custom_buttom.dart';
-import 'custom_text_field.dart';
+import 'constents.dart';
+
+import 'widget/custom_text_field.dart';
+
 
 class AddNoteForm extends StatelessWidget {
   final GlobalKey<FormState> formKey = GlobalKey();

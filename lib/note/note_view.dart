@@ -3,10 +3,10 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note/view/widget/add_note_bottm_sheet.dart';
+import 'package:note/resources/note_bottm_sheet.dart';
 
-import '../cubit/add_note_cubit/add_note_cubit.dart';
-import '../cubit/add_note_cubit/add_note_state.dart';
+import '../resources/cubit/note_cubit.dart';
+import '../resources/cubit/note_state.dart';
 
 class NoteView extends StatelessWidget {
   var ScaffoldKey = GlobalKey<ScaffoldState>();

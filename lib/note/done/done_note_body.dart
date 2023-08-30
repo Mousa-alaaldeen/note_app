@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'custom_app_bar.dart';
-import 'note_list_view_itm.dart';
+import '../../resources/widget/custom_app_bar.dart';
+import 'done_note_list_View_itm.dart';
 
-class NoteViewBody extends StatelessWidget {
-  const NoteViewBody({
+class DoneNoteViewBody extends StatelessWidget {
+  const DoneNoteViewBody({
     super.key,
   });
 
@@ -19,10 +19,10 @@ class NoteViewBody extends StatelessWidget {
           ),
           CustomAppBar(
             icon: Icons.search,
-            title: 'Note Tasks',
+            title: 'Done Note',
           ),
           Expanded(
-            child: NotsListView(),
+            child: DoneNotsListView(),
           ),
         ],
       ),

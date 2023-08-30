@@ -1,12 +1,14 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note/cubit/add_note_cubit/add_note_state.dart';
+import 'package:note/resources/cubit/note_state.dart';
 
 import 'package:sqflite/sqflite.dart';
 
-import '../../view/widget/archive/archive_note_body.dart';
-import '../../view/widget/done/done_note_body.dart';
-import '../../view/widget/note_view_body.dart';
+import '../../note/archive/archive_note_body.dart';
+import '../../note/done/done_note_body.dart';
+import '../../note/tasks/note_view_body.dart';
 
 class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitial());
