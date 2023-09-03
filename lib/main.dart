@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,7 +10,6 @@ import 'package:note/resources/cache_helper.dart';
 import 'package:note/resources/constents.dart';
 import 'package:note/resources/cubit/note_cubit.dart';
 import 'package:note/resources/cubit/note_state.dart';
-import 'package:flutter_app_restart/flutter_app_restart.dart';
 
 import 'generated/l10n.dart';
 
@@ -38,9 +37,7 @@ class MyApp extends StatelessWidget {
       ],
       child: BlocConsumer<AddNoteCubit, AddNoteState>(
         listener: (BuildContext context, state) {
-          if (state is AppChangeLanguageState) {
-            FlutterRestart.restartApp();
-          }
+          if (state is AppChangeLanguageState) {}
         },
         builder: (BuildContext context, state) => MaterialApp(
           locale: isA ? Locale('ar') : Locale('en'),
