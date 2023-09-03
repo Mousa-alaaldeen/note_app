@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
 import '../../resources/widget/custom_app_bar.dart';
 import 'archive_note_list_view_itm.dart';
-
 
 class ArchiveNoteViewBody extends StatelessWidget {
   const ArchiveNoteViewBody({
@@ -11,18 +11,18 @@ class ArchiveNoteViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 18),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 18),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           CustomAppBar(
             icon: Icons.search,
-            title: 'Archive Note',
+            title: S.of(context).titletArchive,
           ),
-          Expanded(
+          const Expanded(
             child: ArchiveNotsListView(),
           ),
         ],

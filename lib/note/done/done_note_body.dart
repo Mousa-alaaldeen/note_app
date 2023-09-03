@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
 import '../../resources/widget/custom_app_bar.dart';
 import 'done_note_list_View_itm.dart';
 
@@ -10,18 +11,18 @@ class DoneNoteViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 18),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 18),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           CustomAppBar(
             icon: Icons.search,
-            title: 'Done Note',
+            title: S.of(context).titletDone,
           ),
-          Expanded(
+          const Expanded(
             child: DoneNotsListView(),
           ),
         ],

@@ -3,6 +3,7 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note/resources/constents.dart';
 import 'package:note/resources/note_bottm_sheet.dart';
 
 import '../resources/cubit/note_cubit.dart';
@@ -65,7 +66,7 @@ class NoteView extends StatelessWidget {
                 shadowColor: Colors.amber,
                 surfaceTintColor: Colors.cyanAccent,
                 elevation: 20,
-                destinations: cubit.bottom,
+                destinations:  isA? cubit.bottom : cubit.bottomEn,
                 selectedIndex: cubit.carrentIndex,
                 onDestinationSelected: (index) {
                   cubit.changeBottom(index);

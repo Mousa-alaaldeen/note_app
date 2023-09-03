@@ -1,19 +1,22 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, depend_on_referenced_packages
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note/resources/cubit/note_state.dart';
 
 import 'package:sqflite/sqflite.dart';
-
+import 'package:intl/intl.dart';
 import '../../note/archive/archive_note_body.dart';
 import '../../note/done/done_note_body.dart';
 import '../../note/tasks/note_view_body.dart';
+import '../cache_helper.dart';
+import '../constents.dart';
 
 class AddNoteCubit extends Cubit<AddNoteState> {
   AddNoteCubit() : super(AddNoteInitial());
   static AddNoteCubit get(context) => BlocProvider.of(context);
-  List<Widget> bottom = [
+
+  List<Widget> bottomEn = [
     const NavigationDestination(
       icon: Icon(Icons.menu),
       label: 'Tasks',
@@ -27,6 +30,21 @@ class AddNoteCubit extends Cubit<AddNoteState> {
       label: 'Archive',
     ),
   ];
+  List<Widget> bottom = [
+    const NavigationDestination(
+      icon: Icon(Icons.menu),
+      label: 'المهام',
+    ),
+    const NavigationDestination(
+      icon: Icon(Icons.check_circle),
+      label: 'تمت',
+    ),
+    const NavigationDestination(
+      icon: Icon(Icons.archive),
+      label: 'أشرفت',
+    ),
+  ];
+
   List<Widget> bottomScreen = [
     const NoteViewBody(),
     const DoneNoteViewBody(),
@@ -37,6 +55,23 @@ class AddNoteCubit extends Cubit<AddNoteState> {
   void changeBottom(index) {
     carrentIndex = index;
     emit(ChangeBottomNavState());
+  }
+
+  void appChangeMode({bool? fromShared}) {
+    if (fromShared != null) {
+      isA = fromShared;
+
+      emit(AppChangeLanguageState());
+    } else {
+      isA = !isA;
+      CacheHelper.saveData(key: 'isAr', value: isA).then((value) => {
+            emit(AppChangeLanguageState()),
+          });
+    }
+  }
+
+  bool isArabic() {
+    return Intl.getCurrentLocale() == 'ar';
   }
 
   List<Map> newTasks = [];

@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable, avoid_print
+// ignore_for_file: must_be_immutable, avoid_print, depend_on_referenced_packages
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,10 +7,10 @@ import 'package:note/resources/cubit/note_cubit.dart';
 import 'package:note/resources/cubit/note_state.dart';
 import 'package:note/resources/widget/button_custom.dart';
 
+import '../generated/l10n.dart';
 import 'constents.dart';
 
 import 'widget/custom_text_field.dart';
-
 
 class AddNoteForm extends StatelessWidget {
   final GlobalKey<FormState> formKey = GlobalKey();
@@ -43,7 +43,7 @@ class AddNoteForm extends StatelessWidget {
               CustomTextField(
                 controller: titleController,
                 keyboardType: TextInputType.text,
-                height: 'Title',
+                height: S.of(context).title,
                 onSaved: (value) {
                   title = value;
                 },
@@ -55,7 +55,7 @@ class AddNoteForm extends StatelessWidget {
               CustomTextField(
                 controller: timeController,
                 keyboardType: TextInputType.datetime,
-                height: 'Time',
+                height: S.of(context).time,
                 onSaved: (value) {
                   time = value;
                 },
@@ -89,7 +89,7 @@ class AddNoteForm extends StatelessWidget {
               CustomTextField(
                 controller: dateController,
                 keyboardType: TextInputType.datetime,
-                height: 'Date',
+                height: S.of(context).date,
                 onSaved: (value) {
                   date = value;
                 },
@@ -112,7 +112,7 @@ class AddNoteForm extends StatelessWidget {
               CustomTextField(
                 controller: contentController,
                 keyboardType: TextInputType.text,
-                height: 'content',
+                height: S.of(context).contant,
                 maxLines: 5,
                 onSaved: (value) {
                   subtitle = value;
@@ -134,6 +134,7 @@ class AddNoteForm extends StatelessWidget {
                     autovalidateMode = AutovalidateMode.always;
                   }
                 },
+                title: S.of(context).add,
               ),
             ],
           ),
